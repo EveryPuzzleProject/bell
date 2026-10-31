@@ -1,0 +1,9 @@
+# Page images live in the private twin ../bell-scans (pages/, clips/ and pages.tsv), never here;
+# printings.tsv records their names and Newspapers.com URLs.
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.pdf
+__pycache__/
+site/index.html
