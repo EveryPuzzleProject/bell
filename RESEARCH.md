@@ -54,6 +54,14 @@ the daily is six weeks older than the catalog has it.
 No constructor seen so far. E&P's 1924 listing says only "Various"; compare McClure's by Richard
 H. Tingley.
 
+## After July 1925
+
+Outside this record's scope, so not in `printings.tsv`; kept here for when the later years open.
+
+- **Seattle Post-Intelligencer**, Friday 1927-06-03: a Bell Syndicate crossword with "yesterday's
+  solution", so the paper was running it on consecutive days, not weekly. No date yet for when
+  it started.
+
 ## Finding them
 
 Text search works for "Bell Syndicate" near "cross word", but OCR varies and printers slipped:
