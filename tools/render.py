@@ -125,27 +125,35 @@ def main() -> None:
 
     page = f"""<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width, initial-scale=1">
 <title>Bell Syndicate crosswords</title>
+<link rel="stylesheet" href="https://everypuzzleproject.org/site.css">
 <style>
-:root {{ --bg:#fbfaf7; --fg:#1d1d1b; --muted:#6b6a65; --line:#e3e0d8; --card:#ffffff; --accent:#1c4f8a; --warn:#a33a1c; --s-have:#2f6f4f; --s-unk:#c29a3a; --s-wanted:#d9d5cc; }}
-@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{ --bg:#161614; --fg:#ecebe6; --muted:#a3a19a; --line:#34332f; --card:#1f1f1c; --accent:#7aaee0; --warn:#e0794f; --s-have:#5fae86; --s-unk:#d6b35c; --s-wanted:#3b3a36; }} }}
-:root[data-theme="dark"] {{ --bg:#161614; --fg:#ecebe6; --muted:#a3a19a; --line:#34332f; --card:#1f1f1c; --accent:#7aaee0; --warn:#e0794f; --s-have:#5fae86; --s-unk:#d6b35c; --s-wanted:#3b3a36; }}
+h1, h2 {{ font-family:inherit; font-weight:bold; line-height:inherit }} .epp-header .wrap {{ max-width:1100px }}
+:root {{ --pg-bg:#fbfaf7; --fg:#1d1d1b; --pg-muted:#6b6a65; --pg-line:#e3e0d8; --card:#ffffff; --pg-accent:#1c4f8a; --warn:#a33a1c; --s-have:#2f6f4f; --s-unk:#c29a3a; --s-wanted:#d9d5cc; }}
+@media (prefers-color-scheme: dark) {{ :root:not([data-theme="light"]) {{ --pg-bg:#161614; --fg:#ecebe6; --pg-muted:#a3a19a; --pg-line:#34332f; --card:#1f1f1c; --pg-accent:#7aaee0; --warn:#e0794f; --s-have:#5fae86; --s-unk:#d6b35c; --s-wanted:#3b3a36; }} }}
+:root[data-theme="dark"] {{ --pg-bg:#161614; --fg:#ecebe6; --pg-muted:#a3a19a; --pg-line:#34332f; --card:#1f1f1c; --pg-accent:#7aaee0; --warn:#e0794f; --s-have:#5fae86; --s-unk:#d6b35c; --s-wanted:#3b3a36; }}
 * {{ box-sizing:border-box }}
-body {{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.55 Georgia, "Times New Roman", serif }}
+body {{ margin:0; background:var(--pg-bg); color:var(--fg); font:16px/1.55 Georgia, "Times New Roman", serif }}
 main {{ max-width:1100px; margin:0 auto; padding:32px 16px 64px }}
 h1 {{ font-size:2rem; margin:0 0 4px }} h2 {{ margin:40px 0 8px; font-size:1.35rem; border-bottom:2px solid var(--fg); padding-bottom:4px }}
-a {{ color:var(--accent) }} .muted {{ color:var(--muted) }} .lede {{ font-size:1.1rem }} code {{ font-size:0.9em }}
+a {{ color:var(--pg-accent) }} .muted {{ color:var(--pg-muted) }} .lede {{ font-size:1.1rem }} code {{ font-size:0.9em }}
 table {{ width:100%; border-collapse:collapse; font:14px/1.4 system-ui, sans-serif }}
-th, td {{ text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top }}
+th, td {{ text-align:left; padding:6px 8px; border-bottom:1px solid var(--pg-line); vertical-align:top }}
 th {{ font-weight:600 }} .scroll {{ overflow-x:auto }} td:first-child {{ white-space:nowrap }}
 .cg {{ font:11px system-ui, sans-serif; overflow-x:auto; margin:4px 0 8px }} .cr {{ display:flex; align-items:center; gap:2px; margin:2px 0 }}
-.cl {{ width:13em; flex:none; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }}
+.cl {{ width:13em; flex:none; color:var(--pg-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis }}
 .c {{ width:9px; height:13px; flex:none; border-radius:2px; display:inline-block }}
-.c.have {{ background:var(--s-have) }} .c.unk {{ background:var(--s-unk) }} .c.nc {{ background:var(--line); border:1px solid var(--muted) }}
-.c.nh {{ background:color-mix(in srgb, var(--warn) 45%, var(--bg)) }} .c.none {{ background:var(--s-wanted); opacity:.45 }}
-.c.mo {{ background:none; color:var(--muted); font-size:10px; text-align:center; line-height:13px }}
-.key {{ font:13px system-ui, sans-serif; color:var(--muted) }} .key .c {{ vertical-align:-2px; margin:0 3px 0 10px }}
-footer {{ margin-top:48px; font:13px system-ui, sans-serif; color:var(--muted) }}
-</style></head><body><main>
+.c.have {{ background:var(--s-have) }} .c.unk {{ background:var(--s-unk) }} .c.nc {{ background:var(--pg-line); border:1px solid var(--pg-muted) }}
+.c.nh {{ background:color-mix(in srgb, var(--warn) 45%, var(--pg-bg)) }} .c.none {{ background:var(--s-wanted); opacity:.45 }}
+.c.mo {{ background:none; color:var(--pg-muted); font-size:10px; text-align:center; line-height:13px }}
+.key {{ font:13px system-ui, sans-serif; color:var(--pg-muted) }} .key .c {{ vertical-align:-2px; margin:0 3px 0 10px }}
+footer {{ margin-top:48px; font:13px system-ui, sans-serif; color:var(--pg-muted) }}
+</style></head><body>
+<header class="epp-header"><div class="wrap">
+  <a href="https://everypuzzleproject.org/">Every Puzzle Project</a>
+  <span class="epp-page">Bell Syndicate</span>
+  <nav><a href="https://github.com/EveryPuzzleProject/bell">Repo</a></nav>
+</div></header>
+<main>
 <h1>The Bell Syndicate's crossword</h1>
 <p class=lede>Bell sold one of the first syndicated crosswords, months before the trade press listed it. This is the Every Puzzle Project's record of which papers carried it in 1924 and 1925, and when. Copies in other papers are the only way to see it, because a syndicate has no paper of its own.</p>
 <p><b>{len(printings)}</b> printings recorded, <b>{len(bell)}</b> tied to Bell, in <b>{len(bell_papers)}</b> papers. Earliest so far: {e(pname(earliest['paper'])) if earliest else 'none'} {e(earliest['date']) if earliest else ''}. E&amp;P's first listing is October 1924.</p>
