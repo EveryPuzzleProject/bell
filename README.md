@@ -63,5 +63,5 @@ issues are public.
 
 Page images from Newspapers.com never go in this repo. They live in the private twin
 `bell-scans`. Whether they're published anywhere is a separate decision, not taken here.
-What's known about Bell, with sources, is in the catalog:
-[bell-mcclure.md](https://github.com/EveryPuzzleProject/catalog/blob/main/syndicates/bell-mcclure.md).
+What's known about Bell, with sources, is in the census:
+[bell-mcclure.md](https://github.com/EveryPuzzleProject/census/blob/main/syndicates/bell-mcclure.md).

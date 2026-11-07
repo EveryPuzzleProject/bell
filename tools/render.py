@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "https://github.com/EveryPuzzleProject/bell"
-CATALOG = "https://github.com/EveryPuzzleProject/catalog/blob/main/syndicates/bell-mcclure.md"
+CENSUS = "https://github.com/EveryPuzzleProject/census/blob/main/syndicates/bell-mcclure.md"
 # Newspapers.com search for one date. If this link form stops working, change it here only.
 SEARCH = "https://www.newspapers.com/search/results/?date={date}&keyword=%22cross%20word%22"
 FIRST_WEEK = dt.date(1923, 12, 31)   # the Monday of the first week drawn
@@ -167,7 +167,7 @@ footer {{ margin-top:48px; font:13px system-ui, sans-serif; color:var(--pg-muted
 {shared_html()}
 <h2>Every printing</h2>
 {printings_html()}
-<footer><a href="{REPO}">Repository</a> · <a href="{CATALOG}">Catalog entry</a> · built {dt.date.today().isoformat()}</footer>
+<footer><a href="{REPO}">Repository</a> · <a href="{CENSUS}">Census entry</a> · built {dt.date.today().isoformat()}</footer>
 </main></body></html>
 """
     (ROOT / "site").mkdir(exist_ok=True)
